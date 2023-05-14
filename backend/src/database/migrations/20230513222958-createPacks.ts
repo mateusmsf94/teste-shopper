@@ -1,15 +1,15 @@
-'use strict';
+import { QueryInterface, DataTypes } from 'sequelize';
 
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
+export default {
+  up: async (queryInterface: QueryInterface) => {
     await queryInterface.createTable('packs', {
       id: {
-        type: Sequelize.BIGINT,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
       },
       pack_id: {
-        type: Sequelize.BIGINT,
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
           model: 'products',
@@ -17,7 +17,7 @@ module.exports = {
         },
       },
       product_id: {
-        type: Sequelize.BIGINT,
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
           model: 'products',
@@ -25,12 +25,12 @@ module.exports = {
         },
       },
       qty: {
-        type: Sequelize.BIGINT,
+        type: DataTypes.BIGINT,
         allowNull: false,
       },
     });
   },
-  down: async (queryInterface) => {
+  down: async (queryInterface: QueryInterface) => {
     await queryInterface.dropTable('packs');
   },
 };

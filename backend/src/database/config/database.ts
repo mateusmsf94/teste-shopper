@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { Options } from 'sequelize';
 
-const dbConfig: Options = {
+const config: Options = {
   username: process.env.DB_USER || 'root',
   password: process.env.DB_PASS || '123456',
   database: 'SHOPPER',
@@ -14,8 +14,4 @@ const dbConfig: Options = {
   logging: false,
 };
 
-module.exports = {
-  development: dbConfig,
-  test: dbConfig,
-  production: dbConfig
-};
+module.exports = config;

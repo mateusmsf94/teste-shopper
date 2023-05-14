@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv/config");
-const dbConfig = {
+const config = {
     username: process.env.DB_USER || 'root',
     password: process.env.DB_PASS || '123456',
     database: 'SHOPPER',
@@ -13,8 +13,4 @@ const dbConfig = {
     },
     logging: false,
 };
-module.exports = {
-    development: dbConfig,
-    test: dbConfig,
-    production: dbConfig
-};
+module.exports = config;

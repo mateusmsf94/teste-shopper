@@ -1,7 +1,7 @@
-'use strict';
+import { QueryInterface } from "sequelize/types";
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  up: async (queryInterface: QueryInterface) => {
     await queryInterface.bulkInsert(
       'packs',
       [
@@ -35,7 +35,7 @@ module.exports = {
     );
   },
 
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('packs', null, {});
+  down: async (queryInterface: QueryInterface) => {
+    await queryInterface.bulkDelete('packs', {}, {});
   },
 };
