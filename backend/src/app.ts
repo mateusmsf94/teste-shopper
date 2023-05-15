@@ -1,13 +1,24 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import priceUpdaterRoute from './routes/priceUpdaterRoute';
+import ProductController from './controllers/productsController';
+import ProductService from './services/productsService';
+import Product from './database/models/productsModel';
+import Pack from './database/models/packModel';
+import productsRouter from './routes/productsRoute';
+import packsRouter from './routes/packRoute';
 
 const app = express();
+
+const productService = new ProductService(Product, Pack);
+const productController = new ProductController(productService);
 
 // Middleware
 app.use(express.json());
 app.use(cors());
-app.use('/priceUpdater', priceUpdaterRoute)
+
+// Routes
+app.use('/products', productsRouter(productController));
+app.use('/packs', packsRouter(productController));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
