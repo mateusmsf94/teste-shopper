@@ -1,11 +1,11 @@
-import { Model, DataTypes } from "sequelize";
+import { Model, DataTypes } from 'sequelize';
 import db from '.';
 
 export default class Product extends Model {
-  declare code: number;
-  declare name: string;
-  declare cost_price: number;
-  declare sales_price: number;
+  public code!: number;
+  public name!: string;
+  public cost_price!: number;
+  public sales_price!: number;
 }
 
 Product.init(
@@ -15,7 +15,7 @@ Product.init(
       primaryKey: true,
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
     cost_price: {
@@ -29,6 +29,7 @@ Product.init(
   },
   {
     sequelize: db,
-    tableName: "products",
+    tableName: 'products',
+    timestamps: false,
   }
 );

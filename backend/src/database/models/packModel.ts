@@ -1,12 +1,12 @@
-import { Model, DataTypes } from "sequelize";
+import { Model, DataTypes } from 'sequelize';
 import db from '.';
-import Product from "./productsModel";
+import Product from './productsModel';
 
 export default class Pack extends Model {
-  declare id: number;
-  declare pack_id: number;
-  declare product_id: number;
-  declare qty: number;
+  public id!: number;
+  public pack_id!: number;
+  public product_id!: number;
+  public qty!: number;
 }
 
 Pack.init(
@@ -21,7 +21,7 @@ Pack.init(
       allowNull: false,
       references: {
         model: Product,
-        key: "code",
+        key: 'code',
       },
     },
     product_id: {
@@ -29,7 +29,7 @@ Pack.init(
       allowNull: false,
       references: {
         model: Product,
-        key: "code",
+        key: 'code',
       },
     },
     qty: {
@@ -39,8 +39,7 @@ Pack.init(
   },
   {
     sequelize: db,
-    tableName: "packs",
+    tableName: 'packs',
+    timestamps: false,
   }
 );
-
-
