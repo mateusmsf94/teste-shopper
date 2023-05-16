@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',

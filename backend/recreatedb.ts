@@ -6,6 +6,8 @@ import pool from './src/database/config/db';
 
 export default async function recreateDatabase(conn: Pool) {
   try {
+    await conn.query('CREATE DATABASE IF NOT EXISTS SHOPPER');
+    await conn.query('USE SHOPPER');
     const importPath = path.resolve(__dirname, 'database.sql');
     const seedDBContent = fs.readFileSync(importPath).toString();
     const queries = seedDBContent.split(';').filter((p) => p.trim());
