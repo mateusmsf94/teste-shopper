@@ -4,7 +4,7 @@ import ProductController from '../controllers/productsController';
 const packsRouter = (productController: ProductController) => {
   const router = Router();
 
-  router.get('/', productController.getPackDetails);
+  router.get('/', productController.getPacksWithDetails);
 
   return router;
 };
