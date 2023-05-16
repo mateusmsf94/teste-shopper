@@ -36,6 +36,10 @@ Agora você pode acessar o aplicativo em seu navegador no endereço `http://loca
 
 Infelizmente, devido à falta de tempo, algumas tarefas não foram concluídas neste projeto. Aqui estão algumas informações importantes:
 
+- **Commits**: Reconheço que meus commits ficaram ruins e inconsistentes. Houve grandes mudanças em cada commit, o que dificulta a rastreabilidade e a revisão do histórico de alterações.
+
+- **Sequelize**: Inicialmente, tentei utilizar o Sequelize como ORM (Object-Relational Mapping) para facilitar a interação com o banco de dados. No entanto, durante o projeto, enfrentei dificuldades na configuração e percebi que não consegui executar consultas complexas conforme necessário.
+
 - **Estilização**: Não houve tempo para aplicar estilos ao aplicativo. Normalmente, teria utilizado o framework Tailwind CSS para facilitar o desenvolvimento e garantir uma aparência agradável.
 
 - **Testes automatizados**: Os testes automatizados também não foram implementados devido à restrição de tempo. Para o frontend, teria sido utilizado o React Testing Library, enquanto para o backend, seriam usadas as bibliotecas Mocha, Chai e Sinon para testes unitários e de integração.
