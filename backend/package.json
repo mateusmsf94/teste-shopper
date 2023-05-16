@@ -7,12 +7,9 @@
     "start": "ts-node app.ts",
     "build": "tsc",
     "dev": "nodemon",
-    "predb:reset": "tsc",
-    "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate && npm run db:seed",
-    "db:drop": "node -r ts-node/register ./node_modules/.bin/sequelize-cli db:drop",
-    "db:create": "node -r ts-node/register ./node_modules/.bin/sequelize-cli db:create",
-    "db:migrate": "node -r ts-node/register ./node_modules/.bin/sequelize-cli db:migrate",
-    "db:seed": "node -r ts-node/register ./node_modules/.bin/sequelize-cli db:seed:all"
+    "restore": "ts-node ./recreatedb.ts",
+    "predb:reset": "tsc"
+    
   },
   "keywords": [],
   "author": "",
