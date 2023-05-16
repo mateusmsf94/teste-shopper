@@ -12,6 +12,7 @@ Certifique-se de que não há processos rodando nas portas 3306, 3001 e 3000 ant
 4. Navegue até a pasta "backend": `cd backend`
 5. Instale as dependências: `npm install`
 6. Restaure os dados iniciais: `npm run restore`
+  Se esse comando nao funcionar rode o database.sql a partir de um programa como mysqlWorkbench
 7. Inicie o servidor de desenvolvimento: `npm run dev`
 8. Abra outra janela do terminal
 9. Navegue até a pasta "frontend": `cd frontend`
